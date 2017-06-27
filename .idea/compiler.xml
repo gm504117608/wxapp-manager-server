@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="wxapp-manager-api" />
+        <module name="wxapp-manager-common" />
+        <module name="wxapp-manager-dao" />
+        <module name="wxapp-manager-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="wxapp-mamnger-api2" target="1.5" />
+      <module name="wxapp-manager" target="1.5" />
+      <module name="wxapp-manager-api" target="1.5" />
+      <module name="wxapp-manager-api2" target="1.5" />
+      <module name="wxapp-manager-common" target="1.5" />
+      <module name="wxapp-manager-dao" target="1.5" />
+      <module name="wxapp-manager-service" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
