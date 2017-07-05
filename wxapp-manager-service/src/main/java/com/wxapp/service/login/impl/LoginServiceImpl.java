@@ -1,6 +1,5 @@
 package com.wxapp.service.login.impl;
 
-import com.wxapp.common.config.Environment;
 import com.wxapp.mapper.LoginMapper;
 import com.wxapp.model.ManagerDO;
 import com.wxapp.service.base.impl.AbstractService;
@@ -29,10 +28,15 @@ public class LoginServiceImpl extends AbstractService<ManagerDO, Long> implement
         super.setBaseMapper(loginMapper);
     }
 
-    public String login(String name, String password){
+    public ManagerDO login(String name, String password){
 //        loginMapper.find(new ManagerDO ());
 //        return null;
-        return "就是这么叼";
+        ManagerDO managerDO = new ManagerDO();
+        managerDO.setId(123L);
+        managerDO.setName("郭尼玛");
+        managerDO.setMobile("13554200339");
+        managerDO.setPassword("3930393");
+        return managerDO;
     }
 
 }
