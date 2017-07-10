@@ -28,15 +28,11 @@ public class LoginServiceImpl extends AbstractService<ManagerDO, Long> implement
         super.setBaseMapper(loginMapper);
     }
 
-    public ManagerDO login(String name, String password){
-//        loginMapper.find(new ManagerDO ());
-//        return null;
-        ManagerDO managerDO = new ManagerDO();
-        managerDO.setId(123L);
-        managerDO.setName("郭尼玛");
-        managerDO.setMobile("13554200339");
-        managerDO.setPassword("3930393");
-        return managerDO;
+    public ManagerDO login(String mobile, String password){
+        ManagerDO param = new ManagerDO ();
+        param.setMobile(mobile);
+        param.setPassword(password);
+        return loginMapper.find(param);
     }
 
 }

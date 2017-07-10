@@ -12,5 +12,13 @@
 
     <artifactId>wxapp-manager-common</artifactId>
 
+    <dependencies>
+        <!-- redis 缓存 -->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+
+    </dependencies>
 
 </project>
