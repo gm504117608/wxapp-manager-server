@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wxapp.mapper.RoleMapper">
+
+    <!--mybatis ehcache缓存配置,以下两个<cache>标签二选一,第一个可以输出日志,第二个不输出日志 -->
+
+    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+
+    <!-- <cache type="org.mybatis.caches.ehcache.EhcacheCache"/> -->
+
+    <sql id="roleColumns">
+        id, role_name, remark, enabled, create_time,
+        create_user, modify_time, modify_user
+    </sql>
+
+    <sql id="roleMenuColumns">
+        id, role_id, menu_id, create_time
+    </sql>
+
+    <!-- 数据库表字段和实体类的映射关系 -->
+    <resultMap id="roleMap" type="roleDO">
+        <id property="id" column="id"/>
+        <id property="roleName" column="role_name"/>
+        <id property="remark" column="remark"/>
+        <id property="enabled" column="enabled"/>
+        <id property="createTime" column="create_time"/>
+        <id property="createUser" column="create_user"/>
+        <id property="modifyTime" column="modify_time"/>
+        <id property="modifyUser" column="modify_user"/>
+    </resultMap>
+
+    <!-- 数据库表字段和实体类的映射关系 -->
+    <resultMap id="roleMenuMap" type="roleMenuDO">
+        <id property="id" column="id"/>
+        <id property="roleId" column="role_id"/>
+        <id property="menuId" column="menu_id"/>
+        <id property="createTime" column="create_time"/>
+    </resultMap>
+
+    <!-- 新增信息 -->
+    <insert id="insert" parameterType="roleDO" useGeneratedKeys="true" keyProperty="id">
+        insert ignore into role (
+          role_name, remark, enabled, create_time,
+          create_user, modify_time, modify_user
+        )values (
+          trim(#{roleName}), trim(#{remark}), trim(#{enabled}),
+          sysdate(), trim(#{createUser}), sysdate(), trim(#{modifyUser})
+        )
+    </insert>
+
+    <!-- 修改信息 -->
+    <update id="update" parameterType="roleDO">
+        update role
+        <set>
+            <if test="roleName != null and roleName != ''">
+                role_name = trim(#{roleName}),
+            </if>
+            <if test="enabled != null">
+                enabled = trim(#{enabled}),
+            </if>
+            <if test="remark != null and remark != ''">
+                remark = trim(#{remark}),
+            </if>
+            modify_time = sysdate()
+        </set>
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+        </where>
+    </update>
+
+    <!-- 删除角色下的菜单信息  -->
+    <delete id="deleteRoleMenus" parameterType="roleMenuDO">
+        delete from role_menu where role_id = trim(#{roleId})
+    </delete>
+
+    <!-- 批量新增信息 -->
+    <insert id="insertBatchRoleMenus" parameterType="java.util.List">
+        insert into role_menu (
+            role_id, menu_id, create_time
+        )values
+        <foreach collection="list" item="item" index="index" separator="," >
+            (trim(#{item.roleId}), trim(#{item.menuId}), sysdate())
+        </foreach>
+    </insert>
+
+
+    <!-- 获取角色数据 -->
+    <select id="find" parameterType="roleDO" resultMap="roleMap">
+        select
+        <include refid="roleColumns"/>
+        from role t
+        <where>
+            <if test="mobile != null and mobile != ''">
+                and t.mobile = trim(#{mobile})
+            </if>
+            <if test="password != null and password != ''">
+                and t.password = trim(#{password})
+            </if>
+            <if test="id != null">
+                and t.id = trim(#{id})
+            </if>
+        </where>
+    </select>
+
+
+</mapper>

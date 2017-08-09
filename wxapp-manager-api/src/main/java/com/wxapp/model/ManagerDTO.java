@@ -1,10 +1,14 @@
 package com.wxapp.model;
 
+import java.io.Serializable;
+
 /**
  * @author guonima
  * @create 2017-07-05 10:01
  */
-public class ManagerDTO {
+public class ManagerDTO implements Serializable {
+
+    private static final long serialVersionUID = 9293102L;
 
     private String name; // 用户名
     private String mobile; // 电话号码
