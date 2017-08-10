@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wxapp.mapper.MenuMapper">
+
+    <!--mybatis ehcache缓存配置,以下两个<cache>标签二选一,第一个可以输出日志,第二个不输出日志 -->
+
+    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+
+    <!-- <cache type="org.mybatis.caches.ehcache.EhcacheCache"/> -->
+
+    <sql id="menuColumns">
+        id, parent_id, name, menu_key, router, icon, level,
+        sort, remark, enabled, create_time
+    </sql>
+
+    <!-- 数据库表字段和实体类的映射关系 -->
+    <resultMap id="menuMap" type="menuDO">
+        <id property="id" column="id"/>
+        <id property="parentId" column="parent_id"/>
+        <id property="name" column="name"/>
+        <id property="menuKey" column="menu_key"/>
+        <id property="router" column="router"/>
+        <id property="icon" column="icon"/>
+        <id property="level" column="level"/>
+        <id property="sort" column="sort"/>
+        <id property="remark" column="remark"/>
+        <id property="enabled" column="enabled"/>
+        <id property="createTime" column="create_time"/>
+    </resultMap>
+    
+    <!-- 获取菜单数据 -->
+    <select id="queryListAll" parameterType="menuDO" resultMap="menuMap">
+        select
+            <include refid="menuColumns"/>
+        from menu t
+    </select>
+
+
+</mapper>

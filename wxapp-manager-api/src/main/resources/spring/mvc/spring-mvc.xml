@@ -25,6 +25,15 @@
 		</property>
 	</bean>
 
+	<!-- API 接口跨域配置 -->
+	<mvc:cors>
+		<mvc:mapping path="/api/**"
+					 allowed-origins="*"
+					 allowed-methods="POST, GET, OPTIONS, DELETE, PUT"
+					 allowed-headers="Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+					 allow-credentials="true" />
+	</mvc:cors>
+
 	<mvc:annotation-driven conversion-service="conversionService"
 		content-negotiation-manager="contentNegotiationManager">
 		<mvc:message-converters register-defaults="true">
