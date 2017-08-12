@@ -6,7 +6,7 @@ import java.io.Serializable;
  * @author guonima
  * @create 2017-07-05 10:01
  */
-public class ManagerDTO implements Serializable {
+public class ManagerDTO extends BaseDTO implements Serializable {
 
     private static final long serialVersionUID = 9293102L;
 

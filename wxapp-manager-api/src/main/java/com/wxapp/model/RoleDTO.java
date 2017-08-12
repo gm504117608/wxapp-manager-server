@@ -8,7 +8,9 @@ import java.util.List;
  * @author guonima
  * @create 2017-08-09 14:36
  */
-public class RoleDTO implements Serializable {
+public class RoleDTO extends BaseDTO implements Serializable {
+
+    private static final long serialVersionUID = 173579002L;
 
     private Long id; //唯一标识id
     private String roleName; // 角色名称
