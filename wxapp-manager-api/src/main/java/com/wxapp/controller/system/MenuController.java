@@ -5,10 +5,9 @@ import com.wxapp.model.MenuDO;
 import com.wxapp.service.Response;
 import com.wxapp.service.system.MenuService;
 import com.wxapp.util.MenuUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,7 +23,7 @@ import java.util.List;
 @RequestMapping("/menu")
 public class MenuController extends BaseController {
 
-    Log logger = LogFactory.getLog(MenuController.class);
+    Logger logger = LoggerFactory.getLogger(MenuController.class);
 
     @Autowired
     private MenuService menuService;
@@ -35,6 +34,7 @@ public class MenuController extends BaseController {
      */
     @RequestMapping(value = "", method = {RequestMethod.GET})
     public Response getAllMenus() {
+        logger.info("获取系统的所有菜单信息");
         List<MenuDO> list = menuService.getAllMenus();
         return success(MenuUtil.getMenuTree(list));
     }

@@ -1,12 +1,11 @@
 package com.wxapp.service.system.impl;
 
-import com.wxapp.mapper.BaseMapper;
 import com.wxapp.mapper.MenuMapper;
 import com.wxapp.model.MenuDO;
 import com.wxapp.service.base.impl.AbstractService;
 import com.wxapp.service.system.MenuService;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +18,7 @@ import java.util.List;
 @Service("menuService")
 public class MenuServiceImpl extends AbstractService<MenuDO, Long> implements MenuService {
 
-    Log logger = LogFactory.getLog(MenuServiceImpl.class);
+    Logger logger = LoggerFactory.getLogger(MenuServiceImpl.class);
 
     @Autowired
     private MenuMapper menuMapper;

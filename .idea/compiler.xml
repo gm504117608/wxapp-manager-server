@@ -13,11 +13,11 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="wxapp-manager" target="1.5" />
-      <module name="wxapp-manager-api" target="1.5" />
-      <module name="wxapp-manager-common" target="1.5" />
-      <module name="wxapp-manager-dao" target="1.5" />
-      <module name="wxapp-manager-service" target="1.5" />
+      <module name="wxapp-manager" target="1.8" />
+      <module name="wxapp-manager-api" target="1.8" />
+      <module name="wxapp-manager-common" target="1.8" />
+      <module name="wxapp-manager-dao" target="1.8" />
+      <module name="wxapp-manager-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

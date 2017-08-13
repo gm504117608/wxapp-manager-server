@@ -4,8 +4,8 @@ import com.wxapp.mapper.LoginMapper;
 import com.wxapp.model.ManagerDO;
 import com.wxapp.service.base.impl.AbstractService;
 import com.wxapp.service.login.LoginService;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 @Service("loginService")
 public class LoginServiceImpl extends AbstractService<ManagerDO, Long> implements LoginService {
 
-    Log logger = LogFactory.getLog(LoginServiceImpl.class);
+    Logger logger = LoggerFactory.getLogger(LoginServiceImpl.class);
 
     @Autowired
     private LoginMapper loginMapper;
