@@ -1,8 +1,8 @@
 package com.wxapp.controller;
 
 import com.wxapp.service.Response;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 /**
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
  */
 public class BaseController {
 
-    Log logger = LogFactory.getLog(BaseController.class);
+    Logger logger = LoggerFactory.getLogger(BaseController.class);
 
     /**
      * 操作成功
