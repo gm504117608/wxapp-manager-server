@@ -6,8 +6,8 @@ import com.wxapp.model.ManagerDTO;
 import com.wxapp.service.Response;
 import com.wxapp.service.login.LoginService;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,7 +26,7 @@ import java.util.UUID;
 @RequestMapping("/manager")
 public class LoginController extends BaseController {
 
-    Log logger = LogFactory.getLog(LoginController.class);
+    Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @Autowired
     private LoginService loginService;

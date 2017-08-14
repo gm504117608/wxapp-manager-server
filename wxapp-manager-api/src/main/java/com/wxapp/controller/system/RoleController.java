@@ -6,8 +6,8 @@ import com.wxapp.model.RoleDTO;
 import com.wxapp.model.RoleMenuDO;
 import com.wxapp.service.Response;
 import com.wxapp.service.system.RoleService;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,7 +25,7 @@ import java.util.List;
 @RequestMapping("/role")
 public class RoleController extends BaseController {
 
-    Log logger = LogFactory.getLog(RoleController.class);
+    Logger logger = LoggerFactory.getLogger(RoleController.class);
 
     @Autowired
     private RoleService roleService;

@@ -7,6 +7,9 @@
         </encoder>
     </appender>
 
+    <!-- 就是这个监控了mybatis日志输出，配合mybatis-config中的logPrefix的“dao” -->
+    <logger name="dao" level="DEBUG"/>
+
     <root>
         <!-- 定义了ERROR和INFO级别的日志，分别在控制台输出 -->
         <level value="error" />

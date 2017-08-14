@@ -6,8 +6,8 @@ import com.wxapp.model.RoleDO;
 import com.wxapp.model.RoleMenuDO;
 import com.wxapp.service.base.impl.AbstractService;
 import com.wxapp.service.system.RoleService;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +20,7 @@ import java.util.List;
 @Service("roleService")
 public class RoleServiceImpl extends AbstractService<RoleDO, Long> implements RoleService {
 
-    Log logger = LogFactory.getLog(RoleServiceImpl.class);
+    Logger logger = LoggerFactory.getLogger(RoleServiceImpl.class);
 
     @Autowired
     private RoleMapper roleMapper;
