@@ -9,6 +9,6 @@ import com.wxapp.model.ManagerDO;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface LoginMapper extends BaseMapper<ManagerDO, Long> {
+public interface ManagerMapper extends BaseMapper<ManagerDO, Long> {
 
 }

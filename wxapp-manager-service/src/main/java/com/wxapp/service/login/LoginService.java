@@ -9,8 +9,4 @@ import com.wxapp.model.ManagerDO;
 public interface LoginService {
 
     public ManagerDO login(String mobile, String password);
-
-    public int insert(ManagerDO managerDO);
-
-    public int update(ManagerDO managerDO);
 }
