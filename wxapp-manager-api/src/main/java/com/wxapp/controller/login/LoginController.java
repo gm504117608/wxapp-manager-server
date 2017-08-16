@@ -6,6 +6,7 @@ import com.wxapp.model.ManagerDO;
 import com.wxapp.model.ManagerDTO;
 import com.wxapp.service.Response;
 import com.wxapp.service.login.LoginService;
+import com.wxapp.service.system.ManagerService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,6 +32,9 @@ public class LoginController extends BaseController {
     @Autowired
     private LoginService loginService;
 
+    @Autowired
+    private ManagerService managerService;
+
     /**
      * 登录商户管理平台
      * @param mobile
@@ -53,20 +57,10 @@ public class LoginController extends BaseController {
             return error(1000, sb.toString());
         }
         ManagerDO result = loginService.login(mobile, password);
-        logger.debug("用户信息：" + result.toString());
         if(result == null || result.getMobile() == null) {
             return error(2000, "手机号码或密码错误;");
         }
-        String token = UUID.randomUUID().toString();
-        Map<String, Object> map = new HashMap<String, Object>();
-        map.put("manager", result);
-        map.put("token", token);
-        try {
-            RedisClient.set(token, 60 * 60 * 3, result);
-        } catch(Exception e) {
-            e.printStackTrace();
-            logger.error("保存用户登录token到redis出现异常：", e);
-        }
-        return success(map);
+        logger.debug("用户信息：" + result.toString());
+        return success(managerService.cacheManagerInfo(result));
     }
 }

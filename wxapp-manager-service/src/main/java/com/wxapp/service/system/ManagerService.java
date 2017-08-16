@@ -8,7 +8,19 @@ import com.wxapp.model.ManagerDO;
  */
 public interface ManagerService {
 
-    public int insert(ManagerDO managerDO);
+    /**
+     * 保存用户注册信息并返回token值
+     * @param managerDO
+     * @return
+     */
+    public String insertManager(ManagerDO managerDO);
 
-    public int update(ManagerDO managerDO);
+    public int updateManager(ManagerDO managerDO);
+
+    /**
+     * 缓存用户信息
+     * @param managerDO 用户信息
+     * @return 返回token值
+     */
+    public String cacheManagerInfo(ManagerDO managerDO);
 }
