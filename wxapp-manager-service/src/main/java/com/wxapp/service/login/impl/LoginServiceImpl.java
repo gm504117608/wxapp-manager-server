@@ -24,6 +24,7 @@ public class LoginServiceImpl extends AbstractService<ManagerDO, Long> implement
     /**
      * 这句必须要加上。不然会报空指针异常，因为在实际调用的时候不是BaseMapper调用，而是具体的mapper
      */
+    @Autowired
     public void setBaseMapper() {
         super.setBaseMapper(managerMapper);
     }
