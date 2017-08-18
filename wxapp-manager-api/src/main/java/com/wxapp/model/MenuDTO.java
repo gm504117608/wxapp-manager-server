@@ -14,7 +14,7 @@ public class MenuDTO extends BaseDTO implements Serializable {
     private Long id; // 菜单id
     private Long parentId; // 父级菜单
     private String name; // 菜单名称
-    private String menuKey; // 菜单唯一标识
+    private Integer menuKey; // 菜单唯一标识
     private String router; // 菜单点击跳转路径
     private String icon; // 菜单图标
     private Integer level; // 菜单层级
@@ -46,11 +46,11 @@ public class MenuDTO extends BaseDTO implements Serializable {
         this.name = name;
     }
 
-    public String getMenuKey() {
+    public Integer getMenuKey() {
         return menuKey;
     }
 
-    public void setMenuKey(String menuKey) {
+    public void setMenuKey(Integer menuKey) {
         this.menuKey = menuKey;
     }
 
@@ -108,7 +108,7 @@ public class MenuDTO extends BaseDTO implements Serializable {
                 "id=" + id +
                 ", parentId=" + parentId +
                 ", name='" + name + '\'' +
-                ", menuKey='" + menuKey + '\'' +
+                ", menuKey=" + menuKey +
                 ", router='" + router + '\'' +
                 ", icon='" + icon + '\'' +
                 ", level=" + level +

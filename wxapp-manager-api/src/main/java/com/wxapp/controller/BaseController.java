@@ -1,9 +1,14 @@
 package com.wxapp.controller;
 
+import com.github.pagehelper.Page;
+import com.wxapp.model.Pageable;
 import com.wxapp.service.Response;
+import jdk.internal.org.objectweb.asm.Handle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+
+import java.util.List;
 
 /**
  * @author guonima
@@ -88,6 +93,22 @@ public class BaseController {
         r.setCode(9999);
         r.setMessage("亲，出现了未知错误，请使用用户反馈功能投诉死他们。");
         return r;
+    }
+
+    /**
+     * 处理分页获取数据
+     * @param page 分页对象
+     * @param data 分页数据
+     * @return
+     */
+    public Pageable handlePageable(Page page, List data){
+        Pageable result = new Pageable();
+        result.setPageNum(page.getPageNum());
+        result.setPageSize(page.getPageSize());
+        result.setTotalRows(page.getTotal());//获取总记录数
+        result.setTotalNum(page.getPages());
+        result.setResult(data);
+        return result;
     }
 
 }

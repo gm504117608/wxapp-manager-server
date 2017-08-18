@@ -34,6 +34,17 @@
         select
             <include refid="menuColumns"/>
         from menu t
+        <where>
+            <if test="name != null and name != ''">
+                and t.name = trim(#{name})
+            </if>
+            <if test="menuKey != null">
+                and t.menu_key = trim(#{menuKey})
+            </if>
+            <if test="router != null and router != ''">
+                and t.router = trim(#{router})
+            </if>
+        </where>
     </select>
 
 
