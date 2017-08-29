@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="wxapp-manager-api:war">
-    <output-path>$PROJECT_DIR$/wxapp-manager-api/target</output-path>
-    <root id="archive" name="wxapp-manager-api-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="wxapp-manager-api:war exploded" />
-    </root>
-  </artifact>
-</component>
