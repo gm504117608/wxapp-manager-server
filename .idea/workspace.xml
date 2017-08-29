@@ -7,8 +7,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa49933b-3147-45e3-b16e-4de996ee028b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+    <list default="true" id="fa49933b-3147-45e3-b16e-4de996ee028b" name="Default" comment="增加.gitignore文件控制不需要提交的代码">
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/wxapp_manager_api_war.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/wxapp_manager_api_war_exploded.xml" afterPath="" />
@@ -77,10 +76,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wxapp-manager-api/src/main/resources/spring/applicationContext.xml" afterPath="$PROJECT_DIR$/wxapp-manager-api/src/main/resources/spring/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wxapp-manager-common/src/main/resources/redis.properties" afterPath="$PROJECT_DIR$/wxapp-manager-common/src/main/resources/redis.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wxapp-manager-dao/src/main/resources/mybatis/jdbc.properties" afterPath="$PROJECT_DIR$/wxapp-manager-dao/src/main/resources/mybatis/jdbc.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/wxapp-manager-api/src/main/resources/spring/spring-mybatis.xml" afterPath="$PROJECT_DIR$/wxapp-manager-api/src/main/resources/mybatis/spring-mybatis.xml" />
     </list>
     <list id="7755f613-fc5d-4da8-b2bc-10350bfc2407" name="noCommit" comment="noCommit" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -115,8 +110,18 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            <state relative-caret-position="102">
+              <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".name" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/.name">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="13" lean-forward="true" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -221,6 +226,7 @@
         <option value="$PROJECT_DIR$/wxapp-manager-api/src/main/resources/mybatis/spring-mybatis.xml" />
         <option value="$PROJECT_DIR$/wxapp-manager-dao/src/main/resources/mybatis/jdbc.properties" />
         <option value="$PROJECT_DIR$/wxapp-manager-common/src/main/resources/redis.properties" />
+        <option value="$PROJECT_DIR$/.idea/.name" />
       </list>
     </option>
   </component>
@@ -905,7 +911,7 @@
       <workItem from="1503288312427" duration="1775000" />
       <workItem from="1503478971549" duration="815000" />
       <workItem from="1504003715075" duration="42000" />
-      <workItem from="1504003779907" duration="278000" />
+      <workItem from="1504003779907" duration="413000" />
     </task>
     <task id="LOCAL-00001" summary="菜单功能编写">
       <created>1502363769131</created>
@@ -970,11 +976,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503050752428</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="增加.gitignore文件控制不需要提交的代码">
+      <created>1504004089480</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1504004089480</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107613000" />
+    <option name="totallyTimeSpent" value="107748000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1081,7 +1094,8 @@
     <MESSAGE value="登录、注册类处理" />
     <MESSAGE value="AbstractService获取mapper接口实例调整" />
     <MESSAGE value="菜单列表数据编写，菜单刷新定位问题修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="菜单列表数据编写，菜单刷新定位问题修改" />
+    <MESSAGE value="增加.gitignore文件控制不需要提交的代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加.gitignore文件控制不需要提交的代码" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1115,13 +1129,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-680">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/.name">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1457,10 +1464,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/.name">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" lean-forward="true" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        <state relative-caret-position="102">
+          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
           <folding />
         </state>
       </provider>
