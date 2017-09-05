@@ -17,16 +17,16 @@
     <!-- 数据库表字段和实体类的映射关系 -->
     <resultMap id="menuMap" type="menuDO">
         <id property="id" column="id"/>
-        <id property="parentId" column="parent_id"/>
-        <id property="name" column="name"/>
-        <id property="menuKey" column="menu_key"/>
-        <id property="router" column="router"/>
-        <id property="icon" column="icon"/>
-        <id property="level" column="level"/>
-        <id property="sort" column="sort"/>
-        <id property="remark" column="remark"/>
-        <id property="enabled" column="enabled"/>
-        <id property="createTime" column="create_time"/>
+        <result property="parentId" column="parent_id"/>
+        <result property="name" column="name"/>
+        <result property="menuKey" column="menu_key"/>
+        <result property="router" column="router"/>
+        <result property="icon" column="icon"/>
+        <result property="level" column="level"/>
+        <result property="sort" column="sort"/>
+        <result property="remark" column="remark"/>
+        <result property="enabled" column="enabled"/>
+        <result property="createTime" column="create_time"/>
     </resultMap>
     
     <!-- 获取菜单数据 -->

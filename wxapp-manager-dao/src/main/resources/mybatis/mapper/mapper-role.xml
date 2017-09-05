@@ -21,13 +21,13 @@
     <!-- 数据库表字段和实体类的映射关系 -->
     <resultMap id="roleMap" type="roleDO">
         <id property="id" column="id"/>
-        <id property="roleName" column="role_name"/>
-        <id property="remark" column="remark"/>
-        <id property="enabled" column="enabled"/>
-        <id property="createTime" column="create_time"/>
-        <id property="createUser" column="create_user"/>
-        <id property="modifyTime" column="modify_time"/>
-        <id property="modifyUser" column="modify_user"/>
+        <result property="roleName" column="role_name"/>
+        <result property="remark" column="remark"/>
+        <result property="enabled" column="enabled"/>
+        <result property="createTime" column="create_time"/>
+        <result property="createUser" column="create_user"/>
+        <result property="modifyTime" column="modify_time"/>
+        <result property="modifyUser" column="modify_user"/>
     </resultMap>
 
     <!-- 数据库表字段和实体类的映射关系 -->
